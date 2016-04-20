@@ -93,6 +93,7 @@ public class Player : MonoBehaviour {
                 Destroy(child);
             }
         }
+        this.GetComponent<CharacterController>().enabled = false;
         respawn.SetActive(true);
         AudioSource.PlayClipAtPoint(deathSound, transform.position);
     }
