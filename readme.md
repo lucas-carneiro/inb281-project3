@@ -20,7 +20,7 @@ At the end of this activity it is expected that you have experimented with the s
     - (DONE) The player and enemies take damage per bullet hit
     - (DONE) The player and enemies die upon losing all health
 - (DONE) Player “Health Bar” or “Hit Points” displayed on the player’s HUD
-- Audio for death and bullet hits
+- (DONE) Audio for death and bullet hits
 - (DONE) Background music
 - New enemies spawn and patrol dependent on your level design
 

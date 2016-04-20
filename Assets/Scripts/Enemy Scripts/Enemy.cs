@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour {
     public enum Status { walk, taunt, attack, hit, die };
     private Status currentStatus;
     private GameObject player;
+    public AudioClip deathSound;
 
     // Use this for initialization
     void Start () {
@@ -20,6 +21,7 @@ public class Enemy : MonoBehaviour {
 	void Update () {
 	    if (currentStatus == Status.die) {
             player.transform.SendMessage("GetKill", SendMessageOptions.DontRequireReceiver);
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
             Destroy(gameObject);
         }
     }

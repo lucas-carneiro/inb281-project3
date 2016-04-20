@@ -33,7 +33,7 @@ public class Player : MonoBehaviour {
 
     //Sounds
     public AudioClip winSound;
-    public AudioClip attackSound;
+    public AudioClip deathSound;
     public AudioClip hitSound;
 
     // Use this for initialization
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour {
             currentHP -= damage;
             HP.value = currentHP / maxHP;
             damageImage.color = new Vector4(damageColor.r, damageColor.g, damageColor.b, 1f);
-            //AudioSource.PlayClipAtPoint(hitSound, transform.position);
+            AudioSource.PlayClipAtPoint(hitSound, transform.position);
         }
     }
 
@@ -94,6 +94,6 @@ public class Player : MonoBehaviour {
             }
         }
         respawn.SetActive(true);
-        //AudioSource.PlayClipAtPoint(loseSound, transform.position);
+        AudioSource.PlayClipAtPoint(deathSound, transform.position);
     }
 }
