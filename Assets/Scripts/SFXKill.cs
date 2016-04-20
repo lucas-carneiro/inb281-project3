@@ -20,7 +20,7 @@ public class SFXKill : MonoBehaviour {
 			Destroy (this.gameObject);
 		}
 		
-		if(myTransform.audio != null)
-			myTransform.audio.pitch = Time.timeScale;
+		if(myTransform.GetComponent<AudioSource>() != null)
+			myTransform.GetComponent<AudioSource>().pitch = Time.timeScale;
 	}
 }

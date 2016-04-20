@@ -13,7 +13,7 @@ public class AK74u : MonoBehaviour {
 	private float fireTime;
 	private float fireRate = 0.1f;		//This needs to match the firing animation length
 	public int clipSize = 30;
-	private float dmg = 5;
+	public float dmg = 20;
 	
 	//Muzzle + Raycast
 	public GameObject muzzle;
@@ -55,9 +55,9 @@ public class AK74u : MonoBehaviour {
 	//Play Weapon Fire Controls - Animation, Audio and Projectiles
 	void firingCheck(){
 		
-		if (Input.GetMouseButton (0) && player.currentAmmo > 0 && animation.IsPlaying("AK74u reload") == false) {
+		if (Input.GetMouseButton (0) && player.currentAmmo > 0 && GetComponent<Animation>().IsPlaying("AK74u reload") == false) {
 			
-			animation.Play ("AK74u fire");
+			GetComponent<Animation>().Play ("AK74u fire");
 
 			if (Time.time > fireTime) {
 
@@ -76,7 +76,7 @@ public class AK74u : MonoBehaviour {
 	
 					Debug.DrawLine (rayCastStart.transform.position, hit.point, Color.red);
 
-					hit.transform.SendMessage ("takeDamage", dmg, SendMessageOptions.DontRequireReceiver);
+					hit.transform.SendMessage ("TakeDamage", dmg, SendMessageOptions.DontRequireReceiver);
 
 					//Spawn visual/audio hit effects
 					Instantiate (bulletHit, hit.point, hit.transform.rotation);
@@ -87,7 +87,7 @@ public class AK74u : MonoBehaviour {
 			}
 		} else if (Input.GetKeyDown("r") || player.currentAmmo <= 0) {
 
-			animation.Play("AK74u reload");
+			GetComponent<Animation>().Play("AK74u reload");
 
 			//Play reload sound
 			GameObject thisSound = Instantiate(reloadSound, myTransform.position, myTransform.rotation) as GameObject;
