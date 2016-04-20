@@ -6,7 +6,7 @@ public class EnemyWeapon : MonoBehaviour {
 	private Transform myTransform;
 	
 	//Enemy Player
-	public GameObject enemyPlayer;
+	private GameObject enemyPlayer;
 	
 	//Turret Variables
 	public float range = 25.0f;
@@ -28,6 +28,7 @@ public class EnemyWeapon : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		myTransform = this.transform;
+        enemyPlayer = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame

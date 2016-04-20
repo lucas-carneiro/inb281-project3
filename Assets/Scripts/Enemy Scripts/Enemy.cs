@@ -9,12 +9,14 @@ public class Enemy : MonoBehaviour {
     private Status currentStatus;
     private GameObject player;
     public AudioClip deathSound;
+    private Transform startTransform;
 
     // Use this for initialization
     void Start () {
         currentHP = maxHP;
         currentStatus = Status.walk;
         player = GameObject.FindGameObjectWithTag("Player");
+        startTransform = transform;
 	}
 	
 	// Update is called once per frame
@@ -22,6 +24,10 @@ public class Enemy : MonoBehaviour {
 	    if (currentStatus == Status.die) {
             player.transform.SendMessage("GetKill", SendMessageOptions.DontRequireReceiver);
             AudioSource.PlayClipAtPoint(deathSound, player.transform.position);
+            GameObject clone = Instantiate(Resources.Load(this.name, typeof(GameObject))) as GameObject;
+            clone.transform.position = startTransform.position;
+            clone.transform.rotation = startTransform.rotation;
+            clone.GetComponent<EnemyAI>().patrolPoints = this.GetComponent<EnemyAI>().patrolPoints;
             Destroy(gameObject);
         }
     }
