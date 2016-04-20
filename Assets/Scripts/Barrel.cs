@@ -29,7 +29,7 @@ public class Barrel : MonoBehaviour {
 		}
 	}
 
-	void takeDamage(int dmg){
+	void TakeDamage(int dmg){
 		health -= dmg;
 	}
 }
