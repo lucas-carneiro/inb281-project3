@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour {
 	void Update () {
 	    if (currentStatus == Status.die) {
             player.transform.SendMessage("GetKill", SendMessageOptions.DontRequireReceiver);
-            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+            AudioSource.PlayClipAtPoint(deathSound, player.transform.position);
             Destroy(gameObject);
         }
     }
@@ -34,7 +34,5 @@ public class Enemy : MonoBehaviour {
         else {
             currentStatus = Status.hit;
         }
-        //Play animation
-        //GetComponent<Animation>().Play(currentStatus.ToString());
     }
 }
