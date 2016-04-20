@@ -15,11 +15,11 @@ Take some time to play around with the provided FPS base to get a feel for the g
 At the end of this activity it is expected that you have experimented with the software and your version of the game has the following elements:
 - A Level Design that has a justified layout:
     - All aspects of design has a reason: design a layout for your FPS level, and explain why certain elements are included
-- A combat system:
-    - The player and enemies have a total amount of health
-    - The player and enemies take damage per bullet hit
-    - The player and enemies die upon losing all health
-- Player “Health Bar” or “Hit Points” displayed on the player’s HUD
+- (DONE) A combat system:
+    - (DONE) The player and enemies have a total amount of health
+    - (DONE) The player and enemies take damage per bullet hit
+    - (DONE) The player and enemies die upon losing all health
+- (DONE) Player “Health Bar” or “Hit Points” displayed on the player’s HUD
 - Audio for death and bullet hits
 - Background music
 - New enemies spawn and patrol dependent on your level design

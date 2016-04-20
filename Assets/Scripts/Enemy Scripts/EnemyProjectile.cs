@@ -6,13 +6,13 @@ public class EnemyProjectile : MonoBehaviour {
 	private Transform myTransform;
 	
 	public float projectileSpeed = 20.0f;
-	public float projectileDamage = 5.0f;
+	public float projectileDamage = 10.0f;
 	public float despawnTime = 5.0f;
 	
 	// Use this for initialization
 	void Start () {
 		myTransform = this.transform;
-		
+        projectileDamage = 10f;
 		despawnTime = Time.time + despawnTime;
 	}
 	
@@ -33,7 +33,7 @@ public class EnemyProjectile : MonoBehaviour {
 		
 		//If collidingObject is an Enemy
 		if(collidingObject.gameObject.tag == "Player"){
-			collidingObject.transform.SendMessage("takeDamage", projectileDamage, SendMessageOptions.DontRequireReceiver);
+			collidingObject.transform.SendMessage("TakeDamage", projectileDamage, SendMessageOptions.DontRequireReceiver);
 		}
 		
 		Destroy (this.gameObject);

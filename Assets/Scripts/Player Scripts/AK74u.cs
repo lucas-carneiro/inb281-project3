@@ -14,9 +14,9 @@ public class AK74u : MonoBehaviour {
 	private float fireRate = 0.1f;		//This needs to match the firing animation length
 	public int clipSize = 30;
 	public float dmg = 20;
-	
-	//Muzzle + Raycast
-	public GameObject muzzle;
+
+    //Muzzle + Raycast
+    public GameObject muzzle;
 	public GameObject rayCastStart;
 	
 	//Sound Clips
@@ -32,7 +32,7 @@ public class AK74u : MonoBehaviour {
 	void Start () {
 		
 		myTransform = this.transform;
-		
+
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 	}
 	
@@ -40,9 +40,9 @@ public class AK74u : MonoBehaviour {
 	void Update () {
 		
 		rotateMuzzle();
-		
-		firingCheck();
-	}
+
+        firingCheck();
+    }
 	
 	
 	//rotate muzzle to face focusPoint
